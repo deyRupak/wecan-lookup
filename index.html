@@ -345,9 +345,9 @@ layout: default
             <% if (info.emails){ %>
                 <% $.each(info.emails, function(i, email){ %>
                     <% if ((i + 1) < info.emails.length){ %>
-                        <i class='fa fa-fw fa-envelope orange_text'></i> <a href='mailto:<%= email %>'><%= email %></a><br />
+                        <i class='fa fa-fw fa-envelope orange_text'></i> <a href='mailto:<%= email %>'><span class="orange_text"><%= email %></span></a><br />
                     <% } else { %>
-                        <i class='fa fa-fw fa-envelope orange_text'></i> <a href='mailto:<%= email %>'><%= email %></a>
+                        <i class='fa fa-fw fa-envelope orange_text'></i> <a href='mailto:<%= email %>'><span class="orange_text"><%= email %></span></a>
                     <% } %>
                 <% }) %>
             <% } %>
