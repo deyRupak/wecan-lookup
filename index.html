@@ -1,0 +1,441 @@
+---
+layout: default
+---
+
+<!-- Add your call to action here! -->
+
+<div class="row">
+    <div class='col-md-10 col-md-offset-1'>
+        <div class="input-group input-group-lg col-sm-8 col-sm-offset-2">
+            <input type="text" class="form-control" placeholder="Enter your address to find who represents you" id="address" name="address" >
+            <span class="input-group-btn">
+                <button class="btn purple_bg" type="submit" id="address-search"><i class='fa fa-search' style="color: #fff"></i> <span class='hidden-xs hidden-sm' style="color: #fff">Search</span></button>
+                <button class="btn btn-default" type="submit" id="find-me"><i class='fa fa-crosshairs'></i> <span class='hidden-xs hidden-sm'>Find me</span> </button>
+            </span>
+        </div>
+        <div class='col-sm-8 col-sm-offset-2 filter_level' style="display: none">
+            <br /><p class='text-center purple_text'>
+                Show level of government:
+                <label>
+                    <input type="checkbox" id="show_local_results" value="Local"> Local
+                </label>
+                <label>
+                    <input type="checkbox" id="show_county_results" value="County"> County
+                </label>
+                <label>
+                    <input type="checkbox" id="show_state_results" value="State"> State
+                </label>
+                <label>
+                    <input type="checkbox" id="show_federal_results" value="Federal"> Federal
+                </label>
+            </p>
+        </div>
+        <br />
+    </div>
+</div>
+<div class="row">
+    <div class='col-md-10 col-md-offset-1'>
+        <div id='no-response-container' class='text-center' style="display:none;">
+            <h1><i class='fa fa-exclamation-triangle'></i> </h1>
+            <h3>No representatives found</h3>
+            <p>We couldn't find any representatives for that address. Please try again.</p>
+        </div>
+        <div id='response-container' style="display:none;">
+
+            <br />
+
+            <p class="lead text-center" id='results-nav'>
+                Jump To : 
+                  <span id='local-nav' style='display: none;'>
+                    <a id="local-name-nav" href="#local-name" style="color: #4f1964;"></a>
+                  </span>
+                  <span>|</span>
+                  <span id='county-nav' style='display: none;'>
+                    <a id="county-name-nav" href="#county-name" style="color: #4f1964;"></a>
+                  </span>
+                  <span>|</span>
+                  <span id='state-nav' style='display: none;'>
+                    <a id="state-name-nav" href="#state-name" style="color: #4f1964;"></a>
+                  </span>
+                  <span>|</span>
+                  <span id='fed-nav'>
+                    <a id="federal-name-nav" href="#federal-name" style="color: #4f1964;">Federal</a></li>
+                  </span>
+                  
+                </ul>
+            </p>
+
+            <hr />
+
+
+            <div id='local-container'>
+                <br />
+                <h3 class='text-left' id="local-name"></h3>
+                <table id="local-results" class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Official</th>
+                            <th class='hidden-xs hidden-sm'> Office</th>
+                            <th class=''> Phone</th>
+                            <th> Links</th>
+                            <th></th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div id='local-container-not-found' style='display: none;' class='text-center'>
+                <h3 class='text-left' id="local-name-not-found"></h3>
+                <p>We couldn't find any representatives for this area</p>
+            </div>
+
+            <div id='county-container'>
+                <br />
+                <h3 class='text-left' id="county-name"></h3>
+                <table id="county-results" class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Official</th>
+                            <th class='hidden-xs hidden-sm'> Office</th>
+                            <th class=''> Phone</th>
+                            <th> Links</th>
+                            <th></th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div id='county-container-not-found' style='display: none;' class='text-center'>
+                <h3 class='text-left' id="county-name-not-found"></h3>
+                <p>We couldn't find any representatives for this area</p>
+            </div>
+
+            <div id='state-container'>
+                <br />
+                <h3 class='text-left' id="state-name"></h3>
+                <table id="state-results" class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Official</th>
+                            <th class='hidden-xs hidden-sm'> Office</th>
+                            <th class=''> Phone</th>
+                            <th> Links</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div id='federal-container'>
+                <br/>
+                <h3 id='federal-name' class='text-left'>United States Federal Government</h3>
+                <table id="federal-results" class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Official</th>
+                            <th class='hidden-xs hidden-sm'> Office</th>
+                            <th class=''> Phone</th>
+                            <th> Links</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class='row'>
+    <div class='col-xs-4 col-xs-offset-2'>
+        <br />
+        <div class="row">
+            <div class="col-xs-3">
+                <h3>
+                    <a href="https://facebook.com/womensequity">
+                        <i class="fa fa-lg fa-fw fa-facebook orange_text"></i>
+                    </a>
+                </h3>
+            </div>
+            <div class="col-xs-3">
+                <h3>
+                    <a href="https://twitter.com/WomensEquity">
+                        <i class="fa fa-lg fa-fw fa-twitter orange_text"></i>
+                    </a>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class='col-xs-4 col-xs-offset-2'>
+        <br />
+        <img class='img-responsive' src='images/wecan_logo.png' title='WE CAN'  alt='WE CAN' style="width: 7rem; height: 7rem"/>
+    </div>
+    <!--<div class='col-md-3 hidden-xs hidden-sm'>
+        <img class='img-responsive' src='images/usa.png' title='The United States of America'  alt='The United States of America' />
+    </div>-->
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="contactModalLabel"></h4>
+      </div>
+      <div class="modal-body" id='modalContent'>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn purple_bg" data-dismiss="modal"  style="color: #fff"><i class='fa fa-times'></i> Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script id="tableGuts" type="text/EJS">
+    <% $.each(people, function(i, info){ %>
+        <tr>
+            <td>
+                <% if (info.person.photoUrl) { %>
+                    <img class="headshot" src="<%= info.person.photoUrl %>" alt="<%= info.person.name %>" title="<%= info.person.name %>" />
+                <% } else { %>
+                    <img class="headshot" src="/images/blank-person.jpg" alt="<%= info.person.name %>" title="<%= info.person.name %>" />
+                <% } %>
+            </td>
+
+            <td>
+                <%= info.person.name %><%= formatParty(info.person.party) %><br/>
+                <%= info.office.name %><br />
+                
+                
+            </td>
+            
+            <td class='hidden-xs hidden-sm'>
+                <% if (info.address) { %>
+                    <% $.each(info.address, function(i, addr){ %>
+                        <p>
+                        <%= toTitleCase(addr.line1) %><br />
+                        <% if (addr.line2) { %>
+                            <%= toTitleCase(addr.line2) %><br />
+                        <% } %>
+                        <% if (addr.line3) { %>
+                            <%= toTitleCase(addr.line3) %><br />
+                        <% } %>
+                        <%= toTitleCase(addr.city) %>, <%= addr.state.toUpperCase() %> <%= addr.zip %>
+                        </p>
+                    <% }) %>
+                <% } %>
+            </td>
+
+            <td class='' style="color: #4f1964">
+                <% if (info.phones){ %>
+                <% $.each(info.phones, function(i, phone){ %>
+                    <% if ((i + 1) < info.phones.length){ %>
+                        <i class='fa fa-fw fa-phone'></i> <%= phone %><br />
+                    <% } else { %>
+                        <i class='fa fa-fw fa-phone'></i> <%= phone %>
+                    <% } %>
+                <% }) %>
+                <br />
+            <% } %>
+            </td>
+            
+            <td>
+                <% if (info.channels || info.urls){ %>
+                    <span class='hidden-xs hidden-sm'>
+                        <% if (info.channels){ %>
+                        <% $.each(info.channels, function(i, channel){ %>
+                            <a href="<%= channel.link %>" target="_blank"><i class="fa fa-fw fa-<%= channel.icon %> orange_text"> </i></a>
+                        <% }) %>
+                        <% } %>
+                        <% if (info.urls){ %>
+                            <% $.each(info.urls, function(i, url){ %>
+                                <a href="<%= url %>" target="_blank"><i class="fa fa-fw fa-globe orange_text"> </i></a>
+                            <% }) %>
+                        <% } %>
+                    </span>
+                    <span class='visible-xs-inline visible-sm-inline'>
+                        <% if (info.channels){ %>
+                        <% $.each(info.channels, function(i, channel){ %>
+                            <a href="<%= channel.link %>" target="_blank"><i class="fa fa-fw fa-<%= channel.icon %> orange_text"> </i></a>
+                        <% }) %>
+                        <% } %>
+                        <% if (info.urls){ %>
+                            <% $.each(info.urls, function(i, url){ %>
+                                <a href="<%= url %>" target="_blank"><i class="fa fa-fw fa-globe orange_text"> </i></a>
+                            <% }) %>
+                        <% } %>
+                    </span>
+                <% } %>
+            </td>
+
+            <% if (info.phones || info.emails){ %>
+                <td class='nowrap'>
+                    <button type="button" class="btn btn-link btn-contact purple_text" data-toggle="modal" data-id="<%= info.pseudo_id %>">
+                        More... <i class='fa fa-chevron-right'></i>
+                    </button>
+                </td>
+            <% } else { %>
+                <td></td>
+            <% } %>
+        </tr>
+    <% }) %>
+</script>
+
+<script id="modalGuts" type="text/EJS">
+    
+    <div class='row'>
+        <div class='col-xs-4'>
+            <% if (info.person.photoUrl) { %>
+                <img class="img-rounded img-responsive" src="<%= info.person.photoUrl %>" alt="<%= info.person.name %>" title="<%= info.person.name %>" style="border-left: 1.2rem solid #4f1964" />
+            <% } else { %>
+                <img class="img-rounded img-responsive" src="/images/blank-person.jpg" alt="<%= info.person.name %>" title="<%= info.person.name %>" style="border-left: 1.2rem solid #4f1964" />
+            <% } %>
+            <br />
+
+            <!-- <strong><%= info.person.name %> <%= formatParty(info.person.party) %></strong><br /> -->
+            <!-- <%= info.office.name %><br /> -->
+            <!-- <%= info.jurisdiction %> -->
+
+        </div>
+        <div class='col-xs-8'>
+
+            <!-- Add your contact instructions here! -->
+
+            <%= info.office.name %><br />
+            <!-- <%= info.jurisdiction %> -->
+
+            <% if (info.address) { %>
+                    <% $.each(info.address, function(i, addr){ %>
+                        <p><br />
+                        <strong>Executive Office</strong><br />
+                        <%= toTitleCase(addr.line1) %><br />
+                        <% if (addr.line2) { %>
+                            <%= toTitleCase(addr.line2) %><br />
+                        <% } %>
+                        <% if (addr.line3) { %>
+                            <%= toTitleCase(addr.line3) %><br />
+                        <% } %>
+                        <%= toTitleCase(addr.city) %>, <%= addr.state.toUpperCase() %> <%= addr.zip %>
+                        </p>
+                    <% }) %>
+                <% } %>
+
+            <!-- <p><strong><%= info.person.name %></strong></p> -->
+            <hr />
+            <% if (info.phones){ %>
+                <% $.each(info.phones, function(i, phone){ %>
+                    <% if ((i + 1) < info.phones.length){ %>
+                        <i class='fa fa-fw fa-phone'></i> <span style="color: #4f1964"><%= phone %></span><br />
+                    <% } else { %>
+                        <i class='fa fa-fw fa-phone'></i> <span style="color: #4f1964"><%= phone %></span>
+                    <% } %>
+                <% }) %>
+                <br />
+            <% } %>
+
+            <% if (info.emails){ %>
+                <% $.each(info.emails, function(i, email){ %>
+                    <% if ((i + 1) < info.emails.length){ %>
+                        <i class='fa fa-fw fa-envelope'></i> <a href='mailto:<%= email %>'><%= email %></a><br />
+                    <% } else { %>
+                        <i class='fa fa-fw fa-envelope'></i> <a href='mailto:<%= email %>'><%= email %></a>
+                    <% } %>
+                <% }) %>
+            <% } %>
+
+            <% if (info.channels || info.urls){ %>
+                    <span class='hidden-xs hidden-sm'>
+                        <% if (info.channels){ %>
+                        <% $.each(info.channels, function(i, channel){ %>
+                            <a href="<%= channel.link %>" target="_blank"><i class="fa fa-fw fa-<%= channel.icon %> orange_text"> </i></a>
+                        <% }) %>
+                        <% } %>
+                        <% if (info.urls){ %>
+                            <% $.each(info.urls, function(i, url){ %>
+                                <a href="<%= url %>" target="_blank"><i class="fa fa-fw fa-globe orange_text"> </i></a>
+                            <% }) %>
+                        <% } %>
+                    </span>
+                    <span class='visible-xs-inline visible-sm-inline'>
+                        <% if (info.channels){ %>
+                        <% $.each(info.channels, function(i, channel){ %>
+                            <a href="<%= channel.link %>" target="_blank"><i class="fa fa-fw fa-<%= channel.icon %> orange_text"> </i></a>
+                        <% }) %>
+                        <% } %>
+                        <% if (info.urls){ %>
+                            <% $.each(info.urls, function(i, url){ %>
+                                <a href="<%= url %>" target="_blank"><i class="fa fa-fw fa-globe orange_text"> </i></a>
+                            <% }) %>
+                        <% } %>
+                    </span>
+                <% } %>
+        </div>
+    </div>
+</script>
+
+<script src="js/lookup_tool.js"></script>
+<script type='text/javascript'>
+  //<![CDATA[
+    var DEBUG = false;
+
+    $(function() {
+
+      var autocomplete = new google.maps.places.Autocomplete(document.getElementById('address'), {types: ['address']});
+
+      $("#address").val(convertToPlainString($.address.parameter('address')));
+
+      var results_level = $.address.parameter('results_level');
+      if (results_level == undefined)
+        results_level = ['local', 'county', 'state', 'federal'];
+      
+      // set levels of government checkboxes
+      if (results_level.indexOf("local") >= 0)
+        $('#show_local_results').prop('checked', true);
+      if (results_level.indexOf("county")  >= 0)
+        $('#show_county_results').prop('checked', true);
+      if (results_level.indexOf("state")  >= 0)
+        $('#show_state_results').prop('checked', true);
+      if (results_level.indexOf("federal")  >= 0)
+        $('#show_federal_results').prop('checked', true);
+
+      $("#results-nav a").click(function(e) {
+        e.preventDefault();
+        var scroll_to = $($("#" + e.target.id).attr('href'));
+        $('html, body').animate({
+            scrollTop: scroll_to.offset().top
+        }, 1000);
+      });
+      
+      $('#find-me').click(function(){
+        findMe(); 
+        return false;
+      });
+      
+      $(":text").keydown(function(e){
+          var key =  e.keyCode ? e.keyCode : e.which;
+          if(key === 13) {
+              $('#address-search').click();
+              return false;
+          }
+      });
+
+      if ($("#address").val()) {
+        if (DEBUG) console.log("search on load")
+        addressSearch();
+      }
+      
+      $('#address-search').click(function(){
+        addressSearch();
+      });
+    });
+  //]]>
+</script>

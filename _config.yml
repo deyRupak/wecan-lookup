@@ -1,0 +1,11 @@
+port: 5000
+markdown: kramdown
+name: "My Reps"
+url: https://deyrupak.github.io/wecan-lookup/
+# source: https://github.com/deyRupak/wecan-lookup/tree/master
+encoding: utf-8
+timezone: America/Chicago
+description: "Enter your address to find and contact your federal, state, county and local elected representatives"
+gems:
+  - jekyll-redirect-from
+google_api_key: AIzaSyAVQrWzBeHiKaOiNwkEyLkxDV8-jUbTmTw

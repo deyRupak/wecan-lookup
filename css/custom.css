@@ -1,0 +1,106 @@
+@import url(https://fonts.googleapis.com/css?family=Bitter:400,400italic,700);
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-size: 16px;
+    /* font-family: 'Open Sans', 'Arial', sans-serif; */
+    font-family: 'Roboto',sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    /* font-family: 'Bitter', serif; */
+    font-family: 'Roboto',sans-serif;
+    font-weight: bold;
+    color: #000;
+}
+
+h1 {
+    font-size: 48px;
+    padding-bottom: 10px;
+}
+
+h1 a, h1 a:hover {
+    color: #444444;
+    text-decoration: none;
+}
+
+.table > thead > tr > th { 
+    white-space: nowrap;
+    font-size: 2rem;
+    color: #000;
+}
+
+.about {
+    font-size: 90%;
+}
+
+/* center the nav pills */
+.centered-pills {
+    text-align: center
+}
+.centered-pills ul.nav-pills {
+    display: inline-block
+}
+.centered-pills li {
+    display: inline
+}
+.centered-pills a {
+    float: left
+}
+* html .centered-pills ul.nav-pills, *+html .centered-pills ul.nav-pills {
+    display: inline
+}
+
+.headshot {
+    max-width: 50px;
+    border-radius: 50%;
+    border: 2px solid #4f1964;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.label-dem {
+    color: #4f1964;
+}
+
+.label-rep {
+    color: #4f1964;
+}
+
+.label-ind {
+    color: #4f1964;
+}
+
+#contactModal {
+    font-size: 0.9em;
+}
+
+.filter_level label {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+#results-nav span {
+    padding-right: 20px;
+}
+
+.table>tbody>tr>td {
+    border-top: none;
+    color: #000;
+}
+
+.purple_text {
+    color: #4f1964;
+}
+.purple_bg {
+    background-color: #4f1964;
+}
+
+.orange_text {
+    color: #fb721e;
+}
+.orange_bg {
+    background-color: #fb721e;
+}
