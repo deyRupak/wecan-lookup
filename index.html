@@ -207,7 +207,7 @@ layout: default
                 <% if (info.person.photoUrl) { %>
                     <img class="headshot" src="<%= info.person.photoUrl %>" alt="<%= info.person.name %>" title="<%= info.person.name %>" />
                 <% } else { %>
-                    <img class="headshot" src="/images/blank-person.jpg" alt="<%= info.person.name %>" title="<%= info.person.name %>" />
+                    <img class="headshot" src="./images/wecan_logo.png" alt="<%= info.person.name %>" title="<%= info.person.name %>" />
                 <% } %>
             </td>
 
@@ -297,7 +297,7 @@ layout: default
             <% if (info.person.photoUrl) { %>
                 <img class="img-rounded img-responsive" src="<%= info.person.photoUrl %>" alt="<%= info.person.name %>" title="<%= info.person.name %>" style="border-left: 1.2rem solid #4f1964" />
             <% } else { %>
-                <img class="img-rounded img-responsive" src="/images/blank-person.jpg" alt="<%= info.person.name %>" title="<%= info.person.name %>" style="border-left: 1.2rem solid #4f1964" />
+                <img class="img-rounded img-responsive" src="./images/wecan_logo.png" alt="<%= info.person.name %>" title="<%= info.person.name %>" style="border-left: 1.2rem solid #4f1964" />
             <% } %>
             <br />
 
@@ -345,9 +345,9 @@ layout: default
             <% if (info.emails){ %>
                 <% $.each(info.emails, function(i, email){ %>
                     <% if ((i + 1) < info.emails.length){ %>
-                        <i class='fa fa-fw fa-envelope'></i> <a href='mailto:<%= email %>'><%= email %></a><br />
+                        <i class='fa fa-fw fa-envelope orange_text'></i> <a href='mailto:<%= email %>'><%= email %></a><br />
                     <% } else { %>
-                        <i class='fa fa-fw fa-envelope'></i> <a href='mailto:<%= email %>'><%= email %></a>
+                        <i class='fa fa-fw fa-envelope orange_text'></i> <a href='mailto:<%= email %>'><%= email %></a>
                     <% } %>
                 <% }) %>
             <% } %>
